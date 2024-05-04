@@ -55,7 +55,6 @@ export default function Customer() {
     }
 
     // lisätään asikas, method POST
-    // Snackbar käyttö!!! LISÄTTÄVÄ myöhemmin
     const addCustomer = (customer) => {
         fetch("https://customerrestservice-personaltraining.rahtiapp.fi/api/customers", {
             method: 'POST',
@@ -119,7 +118,7 @@ export default function Customer() {
             })
     }
 
-    // return ja propsi addCustomer
+    // return ja props
     return (
         <>
             <AddCustomer addCustomer={addCustomer} />

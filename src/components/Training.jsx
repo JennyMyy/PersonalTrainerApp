@@ -26,7 +26,7 @@ export default function Training() {
         },
         { headerName: 'Duration', field: 'duration', sortable: true, filter: true, floatingFilter: true, },
         { headerName: 'Activity', field: 'activity', sortable: true, filter: true, floatingFilter: true },
-        // chatgbt auttoi saamaan asiakkaan nimen listaan
+        // chatgbt auttoi saamaan asiakkaan nimen listaan -> valueGetter: (params) => params.data.customer ? `${params.data.customer.firstname} ${params.data.customer.lastname}` 
         { headerName: 'Customer', field: 'customer', valueGetter: (params) => params.data.customer ? `${params.data.customer.firstname} ${params.data.customer.lastname}` : '', sortable: true, filter: true, floatingFilter: true },
         {
             cellRenderer: (params) =>
@@ -57,7 +57,7 @@ export default function Training() {
 
     // lisätään harjoitus
     const addTraining = (training) => {
-        console.log("Adding training:", training); // Tarkista, että training-objekti on oikeassa muodossa
+        console.log("Adding training:", training); 
         fetch("https://customerrestservice-personaltraining.rahtiapp.fi/api/trainings",
             {
                 method: 'POST',
@@ -69,7 +69,7 @@ export default function Training() {
                 if (response.ok) {
                     setMsgSnackbar('The training has been added');
                     setOpenSnackbar(true);
-                    return response.json(); // palauttaa vastauksen, joka välitetään seuraavalle then-lohkoon
+                    return response.json(); 
                 } else {
                     throw new Error('Data export failed')
                 }
@@ -100,7 +100,7 @@ export default function Training() {
         }
     }
 
-    // return + props addTraining
+    // return + props 
     return (
 
         <>

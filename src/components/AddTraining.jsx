@@ -9,7 +9,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 export default function addTraining(props) {
 
 
-    const [training, setTraining] = useState([{ date: '', duration: '', activity: '', _links: '' }])
+    const [training, setTraining] = useState([{ date: '', duration: '', activity: '' }])
 
     // ikkunan arvo oletuksena false, kun kiinni, true, kun auki
     const [open, setOpen] = React.useState(false);
@@ -68,14 +68,7 @@ export default function addTraining(props) {
                         variant="standard"
                         fullWidth
                     />
-                    <TextField
-                        margin="dense"
-                        label="Customer"
-                        value={training._links || ''}
-                        onChange={(e) => setTraining({ ...training, _links: e.target.value })}
-                        variant="standard"
-                        fullWidth
-                    />
+                   
                     
                 </DialogContent>
                 <DialogActions>
