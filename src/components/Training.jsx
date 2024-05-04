@@ -88,7 +88,7 @@ export default function Training() {
                 .then(response => {
                     console.log("Deleting training with ID:", params.data.id);
                     if (response.ok) {
-                        setMsgSnackbar("The customer was deleted successfully!")
+                        setMsgSnackbar("The training was deleted successfully!")
                         setOpenSnackbar(true);
                         getTrainings(); // haetaan uudelleen päivitetty tilanne
                     } else {
